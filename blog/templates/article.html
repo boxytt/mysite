@@ -1,0 +1,117 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <title> kt's Blog | 简单可以战胜一切 </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="kt">
+    <meta name="description" content="blog | python | iOS | swift">
+    <link rel="icon" type="image/x-icon" href="../static/images/weixiao.png">
+
+    <link rel="stylesheet" href="../static/uno.css" type="text/css">
+    <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">
+    <script async="" src="../static/analytics.js"></script><script src="../static/jquery.min.js"></script>
+    <link href="{% static "google-code-prettify/prettify.css" %}" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="{% static "google-code-prettify/prettify.js" %}"></script>
+</head>
+
+<body onload="prettyPrint()">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon btn-mobile-menu__icon icon-x-circle animated fadeIn"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+
+
+    <header class="panel-cover animated panel-cover--collapsed slideInLeft" style="background-image: url(../static/images/qiao.jpeg);">
+        <div class="panel-main">
+        <div class="panel-main__inner panel-inverted">
+
+        <div class="panel-main__content">
+            <img class="img-circle" src="{% static  "images/weixiao.jpg" %}" width="130" height="130" alt="boxytt" title="boxytt">
+            <h1>Boxytt</h1>
+            <hr width=180 size=1 color=#00ffff align=center noshade>
+            <h4> 简单战胜一切</h4>
+            <h4> 热血可以天下无敌</h4>
+            <hr width=230 size=1 color=#00ffff align=center noshade>
+            <li class="navigation__item"><a href="../blog" title="" class="blog-button">home</a></li>
+            <li class="navigation__item"><a href="Mailto:14ktyang@stu.edu.cn" title="" class="">mail</a></li>
+            <li class="navigation__item"><a href="../friends" title="" class="">friends</a></li>
+        </div>
+        </div>
+        {#半透明效果#}
+        <div class="panel-cover--overlay"></div>
+
+
+    </header>
+
+    <div class="content-wrapper animated slideInLeft">
+    <div class="content-wrapper__inner entry">
+
+    <div class="container">
+        <div class="col-sm-7 blog-main">
+            <div class="blog-post">
+
+                <h2 class="blog-post-title" title="{{ post.title }}"><a style="color:#000000;">{{ post.title }}</a></h2>
+                                                <i2 class="blog-post-meta"> <a style="color:#A9A9A9;">{{ post.date | date:"Y-m-j" }} •</a> </i2>  
+
+                <p>{{ post.content | safe }}</p>
+                <br>
+{#                <p><a style="color:#A9A9A9;">read <span class="badge">{{ post.read }}</span></a></p>#}
+                <br>
+{#                <p><a class="btn btn-sm btn-default" href="../" role="button">返回</a></p> #}
+                <li class="navigation__item" ><a href="../" style="border-color:#000000;color:#000000;">Back</a></li>
+
+
+
+            </div>
+    </div> 
+    </div>
+
+
+    <!-- The main JavaScript file for Casper -->
+    <script src="../static/main.js"></script>
+    <script src="../static/scale.fix.js"></script>
+    <script src="../static/jquery.imagesloaded.min.js"></script>
+    <script src="../static/gallery.js"></script>
+    <script src="../static/jquery.githubRepoWidget.min.js"></script>
+    <script type="text/javascript" src="../static/MathJax.js"></script>
+    <script type="text/x-mathjax-config;executed=true">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]}
+    });
+    </script>
+
+    <!-- totop -->
+    <div id="totop" style="position: fixed; bottom: 50px; right: 30px; cursor: pointer; display: block; opacity: 0;">
+    <a title="back to top"><img style="width:30px;height:30px;" src="../static/totop.png"></a>
+    </div>
+
+    <script>
+    (function($) {
+      var upperLimit = 100;
+      var scrollElem = $('#totop');
+      var scrollSpeed = 500;
+      scrollElem.hide();
+      $(window).scroll(function () {
+        var scrollTop = $(document).scrollTop();
+        if ( scrollTop > upperLimit ) {
+          $(scrollElem).stop().fadeTo(300, 1); // fade back in
+        }else{
+          $(scrollElem).stop().fadeTo(300, 0); // fade out
+        }
+      });
+      $(scrollElem).click(function(){
+        $('html, body').animate({scrollTop:0}, scrollSpeed); return false;
+      });
+    })(jQuery);
+    </script>
+
+<br>
+<footer class="footer"><h6>©2016 by kt .</h6></footer>
+</body>
+</html>
